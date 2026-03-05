@@ -1,0 +1,14 @@
+
+Dataset: U.S. Electric Utility Companies and Rates: Look-up by Zip Code (2024)
+Source:https://catalog.data.gov/dataset/u-s-electric-utility-companies-and-rates-look-up-by-zip-code-2024
+Question: Which zip codes have the highest residential electricity rates in 2024 
+Hypothesis: Zip codes served by investor owned utilities will tend to have higher residential rates than other ownership types 
+
+How I will validate/disprove:
+- Use head to confirm column order and view sample rows.
+- Use awk to:
+  1) extract columns of interest (zip, state, utility_name, ownership, res_rate)
+  2) sort/rank to find the top residential-rate zip codes
+  3) compute simple summaries by ownership type (average or count of high-rate zips)
+- Evidence supporting hypothesis: Investor Owned appears more frequently among the highest res_rate rows and/or has a higher average res_rate.
+- Evidence against hypothesis: No clear difference or other ownership types dominate the top rates.
