@@ -1,0 +1,3 @@
+Investor Owned,0.156898,46330
+Bundled,0.0835604,2643
+Delivery,0.0244441,31
