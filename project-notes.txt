@@ -12,3 +12,10 @@ How I will validate/disprove:
   3) compute simple summaries by ownership type (average or count of high-rate zips)
 - Evidence supporting hypothesis: Investor Owned appears more frequently among the highest res_rate rows and/or has a higher average res_rate.
 - Evidence against hypothesis: No clear difference or other ownership types dominate the top rates.
+
+Step 8: Initial Data Analysis
+
+Using awk and sort, I was able to identify the top residential electricity rates in the dataset. The 10 highest residential rates were all located in Hawaii and served by Hawaii Electric Light Co Inc. These rates were around 0.483 $/kWh, which is significantly higher than the national average.
+
+The average residential electricity rate by ownership  was also calculated. Investor Owned utitlties had an average rate odf around 0.157 $kWh, which was higher than others in that category(bundled: 0.084 and delivery 0.024)
+
