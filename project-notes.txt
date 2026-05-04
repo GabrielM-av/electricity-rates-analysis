@@ -19,3 +19,55 @@ Using awk and sort, I was able to identify the top residential electricity rates
 
 The average residential electricity rate by ownership  was also calculated. Investor Owned utitlties had an average rate odf around 0.157 $kWh, which was higher than others in that category(bundled: 0.084 and delivery 0.024)
 
+Plan to Validate:
+
+- Use head to inspect dataset structure and confirm columns
+- Use awk to extract relevant columns (zip, state, utility_name, ownership, res_rate)
+- Use sort and head to identify top residential electricity rates
+- Compare average residential rates by ownership type
+- Perform state-level comparisons to control for geographic differences
+- Use Spark DataFrame methods (PySpark) to compute averages and validate results programmatically
+
+Step: Inspect Dataset Using head
+
+Command Used:
+head -5 electricity_rates_2024.csv
+
+Result:
+
+-  Confirmed column structure: zip, eiaid, utility_name, state, service_type, ownership, comm_rate, ind_rate, res_rate
+-  Identified relevant columns for analysis:
+
+- zip
+- state
+- utility_name
+- ownership
+- res_rate
+
+Step: Spark Data Analysis
+
+Using PySpark DataFrame methods, the dataset was loaded and processed to calculate key outcomes.
+
+Key operations performed:
+
+- Converted rate columns (comm_rate, ind_rate, res_rate) to numeric types
+- Grouped data by state to calculate total electricity rates
+- Calculated average rates by service type
+- Filtered utilities with high commercial rates
+
+Example outcomes:
+
+- Total electricity rates were highest in certain states when summing all rate types
+- Average residential rates varied by service type
+- Spark analysis confirmed trends observed in the initial awk-based analysis
+
+This validates the hypothesis using a programmatic and scalable approach.
+
+Final Conclusion:
+
+The initial analysis using awk and sorting showed that the highest residential electricity rates were primarily associated with investor owned utilties, mostly in Hawaii
+After performing additional analysis using Spark, the results were consistent with the original findings.
+The spark calculations confirmed that investor owned utilties have a higher average residential electricity rates compared to other ownership types.
+
+State level comparisons also show that even within individual states, investor owned utilties tend to have higher rates which supports the hypothes.
+
